@@ -1,0 +1,18 @@
+#asfagd
+#Options -Indexes
+
+Options +FollowSymLinks -MultiViews
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d [OR]
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^articulo/([0-9]+)/([a-zA-Z0-9_-]+)/?$ portfolio-post.php?id_post=$1 [L,NC,QSA]
+
+RewriteRule ^clientes/(\w+)/?$ url2.php?id=$1
+
+
+</IfModule>
